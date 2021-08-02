@@ -32,6 +32,17 @@
 
         gtag('config', '${analyticsCode}');
     </script>
+    <script>
+        if (typeof jQuery == 'undefined') {
+            alert("없음");
+        } else {
+            alert("있음");
+        }
+        $(document).ready(function () {
+            $("#question-div").css("display: none")
+            $("#result-div").css("display: none")
+        });
+    </script>
 </head>
 
 <body>
@@ -101,17 +112,6 @@
         <button class="retry-btn">${retryText}</button>
         <div id="addThis" class="addthis_inline_share_toolbox"></div>
     </div>
-    <script>
-        if (typeof jQuery == 'undefined') {
-            alert("없음");
-        } else {
-            alert("있음");
-        }
-        $(document).ready(function () {
-            $("#question-div").css("display: none")
-            $("#result-div").css("display: none")
-        });
-    </script>
 </body>
 
 </html>
