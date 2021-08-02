@@ -21,9 +21,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="${addthisLink}"></script>
-    <meta name="google-site-verification" content="AOYdMvmso3-qCALEYplV_sXqJS83q9MP_nundQB5r_s" />
-    <meta name="naver-site-verification" content="20f9b6d66aa6b9f7c7f1c755de1214dae66c57a2" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="google-site-verification" content="${googleWebmasterCode}"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="${analyticsLink}"></script>
     <script>
@@ -36,21 +34,40 @@
 </head>
 
 <body>
-    <nav class="p-3 container navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="https://kkyuang.github.io/handtest/">손 성별 테스트</a>
-        <a class="navbar-brand" style="color: #cccc00;" href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">Supported by 조코딩</a>
-    </nav>
-    <section class="section">
-        <h1 class="title">AI 손 성별 테스트</h1>
-        <h2 class="subtitle">인공지능이 손만 보고 판단하는 당신의 성별은?</h2>
-        <h2 class="sr-only">내 손은 남자 손일까 여자 손일까? 인공지능이 판단해 드립니다!</h2>
-        <h3 class="sr-only">손 사진 1만 장으로 학습한 인공지능이 성별을 알려 드립니다.</h3>
-        <h4 class="sr-only">본 서비스는 Google의 인공지능 teachable machine 2.0을 활용하였습니다.</h4>
-    </section>
-    <section class="youtube pb-3" id="yotube-mid-link">
-        <div class="container mt-3 youtube-cover d-flex flex-row-reverse align-items-center">
-            <a href="https://www.youtube.com/channel/UC4xXYnoB9kFnxdUPG_Hcy7A" class="youtube-link" style="font-size: 2em; text-decoration:none;">By 뀨앙지윤</a>
+    <div id="main-div">
+        <nav class="top-nav-bar">
+            <a class="navbar-brand" href="${testLink}">${testName}</a>
+            <a class="navbar-brand" style="color: #cccc00;" href="${makerLink}">Made by ${makerName}</a>
+        </nav>
+        <h1 class="title">${testName}</h1>
+        <div class="main-img">
+            <img id="main-img" src="${mainImg}" alt="메인 이미지">
         </div>
-    </section>
+    </div>
+    <div id="test-div">
+        <div class="top-bar">
+            <div id="up">
+                <button id="back-btn">← 뒤로가기</button>
+                <span id="progress-text">1/12</span>
+            </div>
+            <div id="progress-bar">
+                <div id="progress-bar-finished"></div>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-img">
+                <img id="question-img" src="" alt="질문 이미지">
+            </div>
+            <div class="question-text">
+                <span id="question-text">
+                    당신은 ~한가요?
+                </span>
+            </div>
+        </div>
+        <div class="answer">
+            <button class="answer-btn" name="1">예 ~합니다</button>
+            <button class="answer-btn" name="2">아니요 ~하지 않습니다</button>
+        </div>
+    </div>
 </body>
 </html>
