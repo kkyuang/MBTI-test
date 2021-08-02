@@ -17,20 +17,20 @@
     <meta property="og:url" content="https://kkyuang.github.io/handtest/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="${testName}" />
-    <meta property="og:description" content="${testDescript}"/>
+    <meta property="og:description" content="${testDescript}" />
     <meta property="og:image" content="${testShareImg}" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="${addthisLink}"></script>
-    <meta name="google-site-verification" content="${googleWebmasterCode}"/>
+    <meta name="google-site-verification" content="${googleWebmasterCode}" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="${analyticsLink}"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', '${analyticsCode}');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', '${analyticsCode}');
     </script>
 </head>
 
@@ -102,10 +102,16 @@
         <div id="addThis" class="addthis_inline_share_toolbox"></div>
     </div>
     <script>
-        $(document).ready(function(){
+        if (typeof jQuery == 'undefined') {
+            alert("없음");
+        } else {
+            alert("있음");
+        }
+        $(document).ready(function () {
             $("#question-div").css("display: none")
             $("#result-div").css("display: none")
         });
     </script>
 </body>
+
 </html>
