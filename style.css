@@ -4,7 +4,7 @@ body{
 
 .pannel{
     margin: 0 auto;
-    background-color: #eeeeee;
+    background-color: #efefef;
     height: 80%;
     width: calc(80% / 16 * 9);
     border-radius: 10px;
