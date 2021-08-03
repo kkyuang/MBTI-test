@@ -3,11 +3,11 @@ var questions = [
         "question": "안녕1",
         "answers" :{
             true: {
-                "text": "당신은 I입니까?",
+                "text": "저는 I입니다",
                 "value": "I"
             },
             false: {
-                "text": "당신은 E입니까?",
+                "text": "저는 E입니다",
                 "value": "E"
             }
         }
@@ -16,11 +16,11 @@ var questions = [
         "question": "안녕2",
         "answers" :{
             true: {
-                "text": "당신은 N입니까?",
+                "text": "저는 N입니다",
                 "value": "N"
             },
             false: {
-                "text": "당신은 S입니까?",
+                "text": "저는 S입니다",
                 "value": "S"
             }
         }
@@ -29,11 +29,11 @@ var questions = [
         "question": "안녕3",
         "answers" :{
             true: {
-                "text": "당신은 T입니까?",
+                "text": "저는 T입니다",
                 "value": "T"
             },
             false: {
-                "text": "당신은 F입니까?",
+                "text": "저는 F입니다",
                 "value": "F"
             }
         }
@@ -42,11 +42,11 @@ var questions = [
         "question": "안녕4",
         "answers" :{
             true: {
-                "text": "당신은 P입니까?",
+                "text": "저는 P입니다",
                 "value": "P"
             },
             false: {
-                "text": "당신은 J입니까?",
+                "text": "저는 J입니다",
                 "value": "J"
             }
         }

@@ -72,38 +72,41 @@
         //몇번째 문제니?
         var nowNum = 0;
         
-        //
+        //가중치
 
         function answer(isPositive){
-            //기능
-            nowNum++
-            if(nowNum == questions.length){
-                test_end()
-                return
-            }
+            if(isPositive == 'back'){
 
-            //UI
-            $(".question").animate({
-                opacity: '0.0'
-            }, 400)
-            $(".answer").animate({
-                opacity: '0.0'
-            }, 400)
-            $(".question").css("display", "none")
-            $(".answer").css("display", "none")
-            
-            setTimeout(() => {
-                //여기서 질문 바꾸자!
-                questionRefresh(nowNum)
+            }
+            else{
+                //기능
+                nowNum++
+                if(nowNum == questions.length){
+                    test_end()
+                    return
+                }
+
+                //UI
                 $(".question").animate({
-                    opacity: '1.0'
+                    opacity: '0.0'
                 }, 400)
                 $(".answer").animate({
-                    opacity: '1.0'
+                    opacity: '0.0'
                 }, 400)
-                $(".question").css("display", "block")
-                $(".answer").css("display", "block")
-            })
+
+                setTimeout(() => {
+                    //여기서 질문 바꾸자!
+                    questionRefresh(nowNum)
+                    $(".question").animate({
+                        opacity: '1.0'
+                    }, 400)
+                    $(".answer").animate({
+                        opacity: '1.0'
+                    }, 400)
+                    $(".question").css("display", "block")
+                    $(".answer").css("display", "block")
+                }, 400)
+            }
         }
 
         function questionRefresh(n){
@@ -177,7 +180,7 @@
     <div id="test-div" class="pannel">
         <div class="top-bar">
             <div id="up">
-                <button id="back-btn">← 뒤로가기</button>
+                <button id="back-btn" onclick="answer('back')">← 뒤로가기</button>
                 <span id="progress-text">1/12</span>
             </div>
             <div id="progress-bar">
