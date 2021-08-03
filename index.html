@@ -23,6 +23,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="${addthisLink}"></script>
+    <script type="text/javascript" src="data.js"></script>
     <meta name="google-site-verification" content="${googleWebmasterCode}" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="${analyticsLink}"></script>
@@ -67,11 +68,11 @@
             }, 800)
         }
 
-        var tempCount = 0;
+        var nowNum = 0;
 
         function answer(isPositive){
             //기능
-            tempCount++
+            nowNum++
 
             //UI
             $(".question").animate({
@@ -96,7 +97,7 @@
                 $(".answer").css("display", "block")
             })
 
-            if(tempCount == 11){
+            if(nowNum == 11){
                 test_end()
             }
         }
