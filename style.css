@@ -33,8 +33,16 @@ body{
     border: solid black 1px;
 }
 
+.no-drag {
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select:none;
+}
+
 #main-img{
-    height: calc(90% - ((2em + 32px) * 2));
+    height: calc(90% - ((78px) * 2));
 }
 
 .navbar-brand{
