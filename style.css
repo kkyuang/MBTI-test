@@ -8,11 +8,17 @@ body{
 
 .pannel{
     position: absolute;
-    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #efefef;
-    height: 80%;
-    width: calc(80vh / 16 * 9);
+    height: 90%;
+    width: calc(90vh / 16 * 9);
     border-radius: 10px;
+}
+
+.top-nav-bar{
+
 }
 
 /* On screens that are 600px or less, set the background color to olive */
@@ -20,6 +26,6 @@ body{
     .pannel{
         margin: 0 auto;
         background-color: #eeeeee;
-        width: 80%;
+        width: 90%;
     }
 }
