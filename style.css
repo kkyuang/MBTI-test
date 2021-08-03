@@ -31,6 +31,7 @@ body{
     border-radius: 1em;
     border-color: #556070;
     padding: auto;
+    margin-top: 32px;
 }
 
 button{
@@ -50,7 +51,7 @@ button{
 }
 
 #main-img{
-    height: calc(90% - ((78px) * 2));
+    height: calc(90% - (78px * 2) - 32px);
 }
 
 .navbar-brand{
