@@ -42,16 +42,65 @@
         function test_start(){
             $("#main-div").animate({
                 opacity: '0.0'
-            }, 200)
+            }, 800)
             setTimeout(() => {
                 $("main-div").css("display", "none")
-            }, 200);
+            }, 800);
             $("#test-div").css("display", "block")
             $("#test-div").css("opacity", "0.0")
             $("#test-div").animate({
                 opacity: '1.0'
-            }, 200)
+            }, 800)
         }
+
+        function test_end(){
+            $("#test-div").animate({
+                opacity: '0.0'
+            }, 800)
+            setTimeout(() => {
+                $("test-div").css("display", "none")
+            }, 800);
+            $("#result-div").css("display", "block")
+            $("#result-div").css("opacity", "0.0")
+            $("#result-div").animate({
+                opacity: '1.0'
+            }, 800)
+        }
+
+        var tempCount = 0;
+
+        function answer(isPositive){
+            //기능
+            tempCount++
+
+            //UI
+            $(".question").animate({
+                opacity: '0.0'
+            }, 400)
+            $(".answer").animate({
+                opacity: '0.0'
+            }, 400)
+            $(".question").css("display", "none")
+            $(".answer").css("display", "none")
+            
+            setTimeout(() => {
+                //여기서 질문 바꾸자!
+
+                $(".question").animate({
+                    opacity: '1.0'
+                }, 400)
+                $(".answer").animate({
+                    opacity: '1.0'
+                }, 400)
+                $(".question").css("display", "block")
+                $(".answer").css("display", "block")
+            })
+
+            if(tempCount == 11){
+                test_end()
+            }
+        }
+
         $(function(){
             var effectList = {
                 '.start-btn': [
@@ -67,7 +116,7 @@
                     'black'
                 ],
                 '.answer-btn': [
-                    '#556070',
+                    '#057cfe',
                     'white',
                     '#eeeeee',
                     'black'
@@ -132,8 +181,8 @@
             </div>
         </div>
         <div class="answer">
-            <button class="answer-btn" name="1">예 ~합니다</button>
-            <button class="answer-btn" name="2">아니요 ~하지 않습니다</button>
+            <button class="answer-btn" onclick="answer(true)" name="1">예 ~합니다</button>
+            <button class="answer-btn" onclick="answer(false)" name="2">아니요 ~하지 않습니다</button>
         </div>
     </div>
     <div id="result-div" class="pannel">
@@ -166,7 +215,7 @@
                 </div>
             </div>
         </div>
-        <button class="retry-btn">${retryText}</button>
+        <button class="retry-btn" onclick="window.location.href=''">${retryText}</button>
         <div id="addThis" class="addthis_inline_share_toolbox"></div>
     </div>
 </body>
