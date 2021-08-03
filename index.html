@@ -40,7 +40,7 @@
             $("#test-div").css("display", "none")
         });
 
-        function test_start(){
+        function test_start() {
             questionRefresh(0)
             $("#main-div").animate({
                 opacity: '0.0'
@@ -55,7 +55,7 @@
             }, 800)
         }
 
-        function test_end(){
+        function test_end() {
             $("#test-div").animate({
                 opacity: '0.0'
             }, 800)
@@ -75,7 +75,7 @@
             mbti += weight['N'] > weight['S'] ? 'N' : 'S'
             mbti += weight['T'] > weight['F'] ? 'T' : 'F'
             mbti += weight['P'] > weight['J'] ? 'P' : 'J'
-            
+
             $("#result-name").text(returnMBTI(mbti, 'name'))
             $("#result-text").text(returnMBTI(mbti, 'descript'))
             $("#good-category-text").text(returnMBTI(returnMBTI(mbti, 'good'), 'name'))
@@ -85,13 +85,13 @@
             $("#bad-category-img").attr("src", returnMBTI(returnMBTI(mbti, 'bad'), 'img'))
         }
 
-        function returnMBTI(mbti, key){
+        function returnMBTI(mbti, key) {
             return MBTIs[mbti[0]][mbti[1]][mbti[2]][mbti[3]][key]
         }
 
         //몇번째 문제니?
         var nowNum = 0;
-        
+
         //가중치
         var weight = {
             'I': 0,
@@ -102,26 +102,26 @@
             'E': 0,
             'S': 0,
             'F': 0,
-            'J': 0 
+            'J': 0
         }
 
         //뒤로가기 대비
         var beforeFixed = ''
 
-        function answer(isPositive){
-            if(isPositive == 'back'){
+        function answer(isPositive) {
+            if (isPositive == 'back') {
                 nowNum--
                 weight[beforeFixed]--
-                if(nowNum == -1){
+                if (nowNum == -1) {
                     window.location.href = ""
                 }
             }
-            else{
+            else {
                 //기능
                 weight[questions[nowNum]['answers'][isPositive]['value']]++
                 beforeFixed = questions[nowNum]['answers'][isPositive]['value']
                 nowNum++
-                if(nowNum == questions.length){
+                if (nowNum == questions.length) {
                     test_end()
                     return
                 }
@@ -145,7 +145,7 @@
             }, 400)
         }
 
-        function questionRefresh(n){
+        function questionRefresh(n) {
             $("#question-text").text(questions[n]['question'])
             $("#answer-0").text(questions[n]['answers'][true]['text'])
             $("#answer-1").text(questions[n]['answers'][false]['text'])
@@ -153,7 +153,7 @@
             $("#progress-text").text((n + 1) + "/" + questions.length)
         }
 
-        $(function(){
+        $(function () {
             var effectList = {
                 '.start-btn': [
                     '#556070',
@@ -178,27 +178,32 @@
                     'white',
                     'white',
                     'black'
+                ],
+                '.share-btn': [
+                    '#556070',
+                    'white',
+                    'white',
+                    'black'
                 ]
             }
-            for(var i = 0; i < Object.keys(effectList).length; i++)
-            {
+            for (var i = 0; i < Object.keys(effectList).length; i++) {
                 var eff = effectList[Object.keys(effectList)[i]]
                 mkMouseAni(Object.keys(effectList)[i], eff)
             }
-            function mkMouseAni(key, effect){
-                $(key).mouseenter(function(e, eft = effect){
+            function mkMouseAni(key, effect) {
+                $(key).mouseenter(function (e, eft = effect) {
                     $(this).animate({
                         backgroundColor: eft[0],
                         color: eft[1]
                     }, 200)
                 });
-                $(key).mouseleave(function(e, eft = effect){
+                $(key).mouseleave(function (e, eft = effect) {
                     $(this).animate({
                         backgroundColor: eft[2],
                         color: eft[3]
                     }, 200)
                 });
-                $(key).click(function(e, eft = effect){
+                $(key).click(function (e, eft = effect) {
                     $(this).animate({
                         backgroundColor: eft[2],
                         color: eft[3]
@@ -206,6 +211,22 @@
                 });
             }
         })
+        function clipBoard(Link) {
+            // 글을 쓸 수 있는 란을 만든다.
+            var aux = document.createElement("input");
+            // 지정된 요소의 값을 할당 한다.
+            aux.setAttribute("value", Link);
+            // body에 추가.
+            document.body.appendChild(aux);
+            // 지정된 내용을 강조한다.
+            aux.select();
+            // 텍스트를 카피 하는 변수를 생성
+            document.execCommand("copy");
+            // body 로 부터 다시 반환 한다.
+            document.body.removeChild(aux);
+            //alert(aux.value);
+            alert("${copyLinkMsg}");
+        }
     </script>
 </head>
 
@@ -256,7 +277,8 @@
             </span>
             <div class="compatibility">
                 <div id="good" class="part" style="float: left;">
-                    <img class="compatibility-img" style="float: left;" id="good-category-img" src="img/temp-result.png" alt="">
+                    <img class="compatibility-img" style="float: left;" id="good-category-img" src="img/temp-result.png"
+                        alt="">
                     <div class="compatibility-text" style="float: right; text-align: left;">
                         <span id="good-category-explain">${goodCompatibilityExplain}</span>
                         <br>
@@ -264,7 +286,8 @@
                     </div>
                 </div>
                 <div id="bad" class="part" style="float: right;">
-                    <img class="compatibility-img" style="float: right;" id="bad-category-img" src="img/temp-result.png" alt="">
+                    <img class="compatibility-img" style="float: right;" id="bad-category-img" src="img/temp-result.png"
+                        alt="">
                     <div class="compatibility-text" style="float: left; text-align: right;">
                         <span id="bad-category-explain">${badCompatibilityExplain}</span>
                         <br>
@@ -273,7 +296,7 @@
                 </div>
             </div>
         </div>
-        <button class="share-btn" onclick="">${shareText}</button>
+        <button class="share-btn" onclick="clipBoard('${testLink}')">${shareText}</button>
         <button class="retry-btn" onclick="window.location.href=''">${retryText}</button>
     </div>
 </body>
