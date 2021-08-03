@@ -4,23 +4,47 @@ body{
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #eeeeee;
 }
 
 .pannel{
     position: absolute;
-    top: 50%;
+    top: 51.25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #efefef;
+    background-color: #ffffff;
     height: 90%;
     width: calc(90vh / 16 * 9);
     border-radius: 10px;
+    text-align: center;
 }
 
-.top-nav-bar{
-    height: 10%;
+.start-btn{
+    width: 30%;
+    height: 2em;
+    font-size: 14px;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.title{
+    
+}
+
+.navbar-brand{
+    width: auto;
+}
+
+.top-nav-bar{ 
+    height: auto;
     width: calc(90vh / 16 * 9);
-    margin: 0 auto;
+    top: 3.25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    vertical-align: middle;
 }
 
 /* On screens that are 600px or less, set the background color to olive */
