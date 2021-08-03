@@ -1,3 +1,135 @@
+//name에 캐릭터명
+//descript에 설명
+//good에 좋은 궁합 MBTI
+//bad에 나쁜 궁합 MBTI
+
+var MBTIs = {
+    'I': {
+        'N': {
+            'T': {
+                'P': {
+                    'name': 'INTP',
+                    'descript': 'INTP입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                },
+                'J': {
+                    'name': 'INTJ',
+                    'descript': 'INTJ입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                }
+            },
+            'F':{
+                'P': {
+                    'name': 'INFP',
+                    'descript': 'INFP입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                },
+                'J': {
+                    'name': 'INFJ',
+                    'descript': 'INFJ입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                }
+            }
+        },
+        'S': {
+            'T': {
+                'P': {
+                    'name': 'ISTP',
+                    'descript': 'ISTP입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                },
+                'J': {
+                    'name': 'ISTJ',
+                    'descript': 'ISTJ입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                }
+            },
+            'F':{
+                'P': {
+                    'name': 'ISFP',
+                    'descript': 'ISFP입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                },
+                'J': {
+                    'name': 'ISFJ',
+                    'descript': 'ISFJ입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                }
+            }
+        }
+    },
+    'E': {
+        'N': {
+            'T': {
+                'P': {
+                    'name': 'ENTP',
+                    'descript': 'ENTP입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                },
+                'J': {
+                    'name': 'ENTJ',
+                    'descript': 'ENTJ입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                }
+            },
+            'F':{
+                'P': {
+                    'name': 'ENFP',
+                    'descript': 'ENFP입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                },
+                'J': {
+                    'name': 'ENFJ',
+                    'descript': 'ENFJ입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                }
+            }
+        },
+        'S': {
+            'T': {
+                'P': {
+                    'name': 'ESTP',
+                    'descript': 'ESTP입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                },
+                'J': {
+                    'name': 'ESTJ',
+                    'descript': 'ESTJ입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                }
+            },
+            'F':{
+                'P': {
+                    'name': 'ESFP',
+                    'descript': 'ESFP입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                },
+                'J': {
+                    'name': 'ESFJ',
+                    'descript': 'ESFJ입니다 ;)',
+                    'good': 'ESFJ',
+                    'bad': 'ESFP'
+                }
+            }
+        }
+    }
+}
+
 var questions = [
     {
         "question": "안녕1",

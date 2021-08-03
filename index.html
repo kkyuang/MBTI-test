@@ -67,22 +67,54 @@
             $("#result-div").animate({
                 opacity: '1.0'
             }, 800)
+
+            var mbti = ''
+            mbti += weight['I'] > weight['E'] ? 'I' : 'E'
+            mbti += weight['N'] > weight['S'] ? 'N' : 'S'
+            mbti += weight['T'] > weight['F'] ? 'T' : 'F'
+            mbti += weight['P'] > weight['J'] ? 'P' : 'J'
+            
+            $("#result-name").text(returnMBTI(mbti, 'name'))
+            $("#result-text").text(returnMBTI(mbti, 'descript'))
+            $("#good-category-text").text(returnMBTI(returnMBTI(mbti, 'good'), 'name'))
+            $("#bad-category-text").text(returnMBTI(returnMBTI(mbti, 'bad'), 'name'))
+        }
+
+        function returnMBTI(mbti, key){
+            return MBTIs[mbti[0]][mbti[1]][mbti[2]][mbti[3]][key]
         }
 
         //몇번째 문제니?
         var nowNum = 0;
         
         //가중치
+        var weight = {
+            'I': 0,
+            'N': 0,
+            'T': 0,
+            'P': 0,
+
+            'E': 0,
+            'S': 0,
+            'F': 0,
+            'J': 0 
+        }
+
+        //뒤로가기 대비
+        var beforeFixed = ''
 
         function answer(isPositive){
             if(isPositive == 'back'){
                 nowNum--
+                weight[beforeFixed]--
                 if(nowNum == -1){
                     window.location.href = ""
                 }
             }
             else{
                 //기능
+                weight[questions[nowNum]['answers'][isPositive]['value']]++
+                beforeFixed = questions[nowNum]['answers'][isPositive]['value']
                 nowNum++
                 if(nowNum == questions.length){
                     test_end()
@@ -96,7 +128,9 @@
             }, 400)
             $(".answer").animate({
                 opacity: '0.0'
-            }, 400)         
+            }, 400)
+            $(".answer-btn").attr("disabled", true)
+            $("#back-btn").attr("disabled", true)
 
             setTimeout(() => {
                 //여기서 질문 바꾸자!
@@ -109,6 +143,8 @@
                 }, 400)
                 $(".question").css("display", "block")
                 $(".answer").css("display", "block")
+                $(".answer-btn").attr("disabled", false)
+                $("#back-btn").attr("disabled", false)
             }, 400)
         }
 
@@ -233,9 +269,9 @@
                 <div id="bad" class="part" style="float: right;">
                     <img class="compatibility-img" style="float: right;" id="bad-category-img" src="img/temp-result.png" alt="">
                     <div class="compatibility-text" style="float: left; text-align: right;">
-                        <span id="good-category-explain">${badCompatibilityExplain}</span>
+                        <span id="bad-category-explain">${badCompatibilityExplain}</span>
                         <br>
-                        <span id="good-category-text">고양이2</span>
+                        <span id="bad-category-text">고양이2</span>
                     </div>
                 </div>
             </div>
