@@ -22,7 +22,6 @@
     <meta property="og:image" content="${testShareImg}" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <script type="text/javascript" src="${addthisLink}"></script>
     <script type="text/javascript" src="data.js"></script>
     <meta name="google-site-verification" content="${googleWebmasterCode}" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -147,6 +146,7 @@
 
         function questionRefresh(n) {
             $("#question-text").text(questions[n]['question'])
+            $("#question-img").attr("src", questions[n]['img'])
             $("#answer-0").text(questions[n]['answers'][true]['text'])
             $("#answer-1").text(questions[n]['answers'][false]['text'])
             $("#progress-bar-finished").css("width", (((n + 1) / questions.length) * 100) + "%")
@@ -238,7 +238,7 @@
     <div id="main-div" class="pannel">
         <h1 class="title">${testName}</h1>
         <!--<img id="main-img" src="${mainImg}" alt="메인 이미지">-->
-        <img id="main-img" src="img/temp-img.png" alt="메인 이미지">
+        <img id="main-img" src="img/main-img.png" alt="메인 이미지">
         <button class="start-btn" onclick="test_start()">${startBtnMsg}</button>
     </div>
     <div id="test-div" class="pannel">
@@ -252,7 +252,7 @@
             </div>
         </div>
         <div class="question">
-            <img id="question-img" src="img/temp-question.png" alt="질문 이미지">
+            <img id="question-img" src="img/question-img.png" alt="질문 이미지">
             <div class="question-text">
                 <span id="question-text">
                     당신은 ~한가요?

@@ -149,6 +149,7 @@ var MBTIs = {
 var questions = [
     {
         "question": "안녕1",
+        "img": "img/question-img.png",
         "answers": {
             true: {
                 "text": "저는 I입니다",
@@ -162,6 +163,7 @@ var questions = [
     },
     {
         "question": "안녕2",
+        "img": "img/question-img.png",
         "answers": {
             true: {
                 "text": "저는 N입니다",
@@ -175,6 +177,7 @@ var questions = [
     },
     {
         "question": "안녕3",
+        "img": "img/question-img.png",
         "answers": {
             true: {
                 "text": "저는 T입니다",
@@ -188,6 +191,7 @@ var questions = [
     },
     {
         "question": "안녕4",
+        "img": "img/question-img.png",
         "answers": {
             true: {
                 "text": "저는 P입니다",
