@@ -86,7 +86,7 @@ button{
 }
 
 #progress-bar-finished{
-    width: 30%;
+    width: 0%;
     height: 1.5em;
     background-color: #cccccc;
     border-radius: 0.75em;
