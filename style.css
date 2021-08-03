@@ -18,14 +18,18 @@ body{
 }
 
 .top-nav-bar{
-
+    height: 10%;
+    width: calc(90vh / 16 * 9);
+    margin: 0 auto;
 }
 
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
     .pannel{
-        margin: 0 auto;
         background-color: #eeeeee;
+        width: 90%;
+    }
+    .top-nav-bar{
         width: 90%;
     }
 }
