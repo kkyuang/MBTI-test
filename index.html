@@ -108,6 +108,9 @@
 
         function questionRefresh(n){
             $("#question-text").text(questions[n]['question'])
+            $("#answer-0").text(questions[n]['answers'][true]['text'])
+            $("#answer-1").text(questions[n]['answers'][false]['text'])
+            
         }
 
         $(function(){
@@ -190,8 +193,8 @@
             </div>
         </div>
         <div class="answer">
-            <button class="answer-btn" onclick="answer(true)" name="1">예 ~합니다</button>
-            <button class="answer-btn" onclick="answer(false)" name="2">아니요 ~하지 않습니다</button>
+            <button class="answer-btn" onclick="answer(true)" id="answer-0">예 ~합니다</button>
+            <button class="answer-btn" onclick="answer(false)" id="answer-1">아니요 ~하지 않습니다</button>
         </div>
     </div>
     <div id="result-div" class="pannel">
