@@ -41,6 +41,7 @@
         });
 
         function test_start(){
+            questionRefresh(0)
             $("#main-div").animate({
                 opacity: '0.0'
             }, 800)
@@ -68,11 +69,18 @@
             }, 800)
         }
 
+        //몇번째 문제니?
         var nowNum = 0;
+        
+        //
 
         function answer(isPositive){
             //기능
             nowNum++
+            if(nowNum == questions.length){
+                test_end()
+                return
+            }
 
             //UI
             $(".question").animate({
@@ -86,7 +94,7 @@
             
             setTimeout(() => {
                 //여기서 질문 바꾸자!
-
+                questionRefresh(nowNum)
                 $(".question").animate({
                     opacity: '1.0'
                 }, 400)
@@ -96,10 +104,10 @@
                 $(".question").css("display", "block")
                 $(".answer").css("display", "block")
             })
+        }
 
-            if(nowNum == 11){
-                test_end()
-            }
+        function questionRefresh(n){
+            $("#question-text").text(questions[n]['question'])
         }
 
         $(function(){
