@@ -1,3 +1,20 @@
 body{
     font-family: 'Noto Sans KR', sans-serif;
 }
+
+.pannel{
+    margin: 0 auto;
+    background-color: #eeeeee;
+    height: 80%;
+    width: calc(80% / 16 * 9);
+    border-radius: 10px;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    .pannel{
+        margin: 0 auto;
+        background-color: #eeeeee;
+        width: 80%;
+    }
+}
