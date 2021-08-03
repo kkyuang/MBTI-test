@@ -41,15 +41,16 @@
 </head>
 
 <body>
+    <nav class="top-nav-bar">
+        <a class="navbar-brand" href="${testLink}">${testName}</a>
+        <a class="navbar-brand" style="color: #cccc00;" href="${makerLink}">Made by ${makerName}</a>
+    </nav>
     <div id="main-div">
-        <nav class="top-nav-bar">
-            <a class="navbar-brand" href="${testLink}">${testName}</a>
-            <a class="navbar-brand" style="color: #cccc00;" href="${makerLink}">Made by ${makerName}</a>
-        </nav>
         <h1 class="title">${testName}</h1>
         <div class="main-img">
             <img id="main-img" src="${mainImg}" alt="메인 이미지">
         </div>
+        <button id="start-btn">${startBtnMsg}</button>
     </div>
     <div id="test-div">
         <div class="top-bar">
