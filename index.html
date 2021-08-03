@@ -68,6 +68,8 @@
                 opacity: '1.0'
             }, 800)
 
+            //결과도출
+
             var mbti = ''
             mbti += weight['I'] > weight['E'] ? 'I' : 'E'
             mbti += weight['N'] > weight['S'] ? 'N' : 'S'
@@ -76,6 +78,9 @@
             
             $("#result-name").text(returnMBTI(mbti, 'name'))
             $("#result-text").text(returnMBTI(mbti, 'descript'))
+            $("#good-category-text").text(returnMBTI(returnMBTI(mbti, 'good'), 'name'))
+            $("#bad-category-text").text(returnMBTI(returnMBTI(mbti, 'bad'), 'name'))
+            $("#result-img").attr("src", returnMBTI(mbti, 'img'))
             $("#good-category-text").text(returnMBTI(returnMBTI(mbti, 'good'), 'name'))
             $("#bad-category-text").text(returnMBTI(returnMBTI(mbti, 'bad'), 'name'))
         }
@@ -123,9 +128,6 @@
             }
 
             //UI
-            $(".question").animate({
-                opacity: '0.0'
-            }, 400)
             $(".answer").animate({
                 opacity: '0.0'
             }, 400)
@@ -135,14 +137,9 @@
             setTimeout(() => {
                 //여기서 질문 바꾸자!
                 questionRefresh(nowNum)
-                $(".question").animate({
-                    opacity: '1.0'
-                }, 400)
                 $(".answer").animate({
                     opacity: '1.0'
                 }, 400)
-                $(".question").css("display", "block")
-                $(".answer").css("display", "block")
                 $(".answer-btn").attr("disabled", false)
                 $("#back-btn").attr("disabled", false)
             }, 400)
