@@ -7,10 +7,11 @@ body{
 }
 
 .pannel{
+    position: absolute;
     margin: 0 auto;
     background-color: #efefef;
     height: 80%;
-    width: calc(80% / 16 * 9);
+    width: calc(80vh / 16 * 9);
     border-radius: 10px;
 }
 
