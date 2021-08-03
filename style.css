@@ -115,6 +115,40 @@ button{
     border: none;
 }
 
+#result-text{
+    width: 80%;
+    padding: 10px 0;
+    margin: 2em auto;
+    margin-top: 1em;
+    font-size: 1em;
+    background-color: #eeeeee;
+    border-radius: 1em;
+    display: block;
+}
+
+.retry-btn{
+    width: 50%;
+    height: 2em;
+    font-size: 1.5em;
+    border-radius: 1em;
+    padding: auto;
+}
+
+.compatibility{
+    width: 80%;
+    padding: 10px 0;
+    margin: 2em auto;
+    margin-top: 1em;
+    font-size: 1em;
+    background-color: #eeeeee;
+    border-radius: 1em;
+    display: block;
+}
+
+#result-img{
+    width: 30%;
+}
+
 .top-nav-bar{ 
     height: auto;
     width: calc(90vh / 16 * 9);
