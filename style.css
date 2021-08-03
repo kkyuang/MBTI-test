@@ -29,9 +29,15 @@ body{
     height: 2em;
     font-size: 1.5em;
     border-radius: 1em;
+    padding: auto;
+}
+
+button{
     background-color:white;
     border: solid black 1px;
-    padding: auto;
+    border-radius: 1em;
+    padding: 2px;
+    text-align: center;
 }
 
 .no-drag {
