@@ -76,7 +76,10 @@
 
         function answer(isPositive){
             if(isPositive == 'back'){
-
+                nowNum--
+                if(nowNum == -1){
+                    window.location.href = ""
+                }
             }
             else{
                 //기능
@@ -85,28 +88,28 @@
                     test_end()
                     return
                 }
+            }
 
-                //UI
+            //UI
+            $(".question").animate({
+                opacity: '0.0'
+            }, 400)
+            $(".answer").animate({
+                opacity: '0.0'
+            }, 400)         
+
+            setTimeout(() => {
+                //여기서 질문 바꾸자!
+                questionRefresh(nowNum)
                 $(".question").animate({
-                    opacity: '0.0'
+                    opacity: '1.0'
                 }, 400)
                 $(".answer").animate({
-                    opacity: '0.0'
+                    opacity: '1.0'
                 }, 400)
-
-                setTimeout(() => {
-                    //여기서 질문 바꾸자!
-                    questionRefresh(nowNum)
-                    $(".question").animate({
-                        opacity: '1.0'
-                    }, 400)
-                    $(".answer").animate({
-                        opacity: '1.0'
-                    }, 400)
-                    $(".question").css("display", "block")
-                    $(".answer").css("display", "block")
-                }, 400)
-            }
+                $(".question").css("display", "block")
+                $(".answer").css("display", "block")
+            }, 400)
         }
 
         function questionRefresh(n){
@@ -156,6 +159,12 @@
                     }, 200)
                 });
                 $(key).mouseleave(function(e, eft = effect){
+                    $(this).animate({
+                        backgroundColor: eft[2],
+                        color: eft[3]
+                    }, 200)
+                });
+                $(key).click(function(e, eft = effect){
                     $(this).animate({
                         backgroundColor: eft[2],
                         color: eft[3]
