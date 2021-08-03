@@ -135,6 +135,15 @@ button{
     padding: auto;
 }
 
+.share-btn{
+    width: 50%;
+    height: 2em;
+    font-size: 1.5em;
+    border-radius: 1em;
+    padding: auto;
+    margin-bottom: 10px;
+}
+
 .compatibility-img{
     width: calc(var(--parentHeight));
 }
