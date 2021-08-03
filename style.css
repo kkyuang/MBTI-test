@@ -31,6 +31,7 @@ body{
     border-radius: 1em;
     background-color:white;
     border: solid black 1px;
+    padding: auto;
 }
 
 .no-drag {
