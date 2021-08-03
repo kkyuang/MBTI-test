@@ -29,6 +29,7 @@ body{
     height: 2em;
     font-size: 1.5em;
     border-radius: 1em;
+    border-color: #556070;
     padding: auto;
 }
 
@@ -134,14 +135,33 @@ button{
     padding: auto;
 }
 
+.compatibility-img{
+    width: calc(var(--parentHeight));
+}
+
+.part{
+    width: 50%;
+    height: 100%;
+}
+
 .compatibility{
     width: 80%;
-    padding: 10px 0;
+    padding: calc(var(--parentHeight) * 0.1);
     margin: 2em auto;
     margin-top: 1em;
     font-size: 1em;
+    --parentHeight: 5em;
+    height: var(--parentHeight);
     background-color: #eeeeee;
     border-radius: 1em;
+    display: block;
+}
+
+.compatibility-text{
+    width: calc(100% - (var(--parentHeight)) - 20px);
+    margin: 1em 0;
+    padding: 0 10px;
+    height: 3em;
     display: block;
 }
 
